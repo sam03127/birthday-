@@ -719,4 +719,71 @@ html.no-gate .gate{ display:none !important; }
   .wish.is-in .wish__hero{ animation:none; }
   .wish.is-in .wish__heroWrap::before{ animation:none; opacity:.9; }
   .wish.is-in .wish__heroWrap::after{ animation:none; opacity:0; }
+}/* ============================================================
+   FIX — RESPONSIVE GIFT BOW
+   ============================================================ */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* Fix the bow inside the opening gift */
+.gate__bow {
+  width: 56%;
+  max-width: 125px;
+  height: auto;
+  display: block;
+}
+
+.gate__bow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Keep the main archery bow responsive too */
+.archery {
+  width: clamp(100px, 18vw, 168px);
+  max-width: 168px;
+}
+
+.archery .bow {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep every SVG inside the page from overflowing */
+svg {
+  max-width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gate__box {
+    width: min(58vw, 220px);
+  }
+
+  .gate__bow {
+    width: 52%;
+    max-width: 110px;
+  }
+
+  .archery {
+    width: clamp(90px, 22vw, 135px);
+  }
 }
